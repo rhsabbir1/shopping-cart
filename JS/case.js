@@ -15,18 +15,21 @@ function updateCaseNumber(isIncres) {
     inputFiled.value = newInputValue;
     return newInputValue;
 }
-function priceUpdate(inputNUmber) {
+function priceUpdate( inputNUmber ) {
     const casePrice = document.getElementById('case-price')
     
     let newCasePRice = inputNUmber * 56;
     casePrice.innerText = newCasePRice;
- 
 }
 
 document.getElementById('case-plus-btn').addEventListener('click', function () {
+
     const casePlusInputNumber = updateCaseNumber(true)
 
     priceUpdate(casePlusInputNumber)
+
+   
+   subTotalCalcaluted()
 
 })
 
@@ -34,4 +37,6 @@ document.getElementById('case-minus-btn').addEventListener('click', function () 
     const caseMinusInputNUmber = updateCaseNumber(false)
 
     priceUpdate(caseMinusInputNUmber)
+
+    subTotalCalcaluted()
 })
